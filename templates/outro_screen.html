@@ -1,0 +1,30 @@
+<div class="screen" id="outroScreen">
+  <video id="outroVideo" class="outro-video" style="display: none;">
+    <source src="{{ url_for('static', filename='videos/outro_video.mp4') }}" type="video/mp4">
+    متصفحك لا يدعم تشغيل الفيديو.
+  </video>
+  <div class="result-message-box" id="resultMessageBox" style="display: none;">
+    <h1 class="outro-title" id="outroTitle"></h1>
+    <img src="{{ url_for('static', filename='images/check.png') }}" alt="شيك الجائزة" class="prize-check">
+    <p class="final-prize-text">لقد ربحت مبلغ وقدره:</p>
+    <p class="final-prize" id="finalPrizeAmount">0 نقطة</p>
+    
+    <div class="result-details" id="resultDetails">
+      <!-- سيتم ملؤها ديناميكياً -->
+    </div>
+
+    <div class="outro-actions">
+      <button class="btn btn-play-again" id="playAgainButton">
+        <i class="fas fa-redo"></i>
+        لعب مرة أخرى
+      </button>
+      <button class="btn btn-main-menu" id="mainMenuButton">
+        <i class="fas fa-home"></i>
+        القائمة الرئيسية
+      </button>
+    </div>
+
+    <div class="countdown" id="outroCountdown"></div>
+  </div>
+</div>
+

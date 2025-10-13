@@ -1,0 +1,75 @@
+/* welcome.css - شاشة الترحيب */
+#welcomeScreen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+    background: var(--gradient-primary);
+}
+
+.welcome-content {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 50px;
+    border-radius: var(--border-radius-lg);
+    border: 3px solid var(--secondary-color);
+    box-shadow: var(--shadow-heavy);
+}
+
+.welcome-content h1 {
+    font-size: 4rem;
+    color: var(--secondary-color);
+    margin-bottom: 30px;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.start-app-btn {
+    background: linear-gradient(135deg, #00b4db, #0083b0);
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border: none;
+    padding: 14px 40px;
+    border-radius: var(--border-radius-xl);
+    cursor: pointer;
+    box-shadow: 0 6px 15px rgba(0, 131, 176, 0.4);
+    transition: all var(--transition-fast);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    animation: pulseGlow 2.5s infinite;
+}
+
+.start-app-btn:hover {
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 114, 255, 0.5);
+}
+
+/* ميزات شاشة الترحيب */
+.welcome-features {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+}
+
+.feature-item i {
+    font-size: 1.3rem;
+}
+
+.version-info {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #ccc;
+    opacity: 0.8;
+}
+

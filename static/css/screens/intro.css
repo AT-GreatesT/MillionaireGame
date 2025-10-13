@@ -1,0 +1,80 @@
+/* intro.css - شاشة المقدمة */
+#introScreen {
+    gap: 40px;
+    background: var(--gradient-primary);
+    position: relative; /* ✅ ضروري لتثبيت الفيديو داخل الشاشة */
+    overflow: hidden;
+    position: relative; /* لتثبيت الفيديو داخله */
+    overflow: hidden;
+    background: var(--gradient-primary);
+}
+
+.main-title {
+    font-size: 4rem;
+    color: var(--secondary-color);
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+    animation: pulse 2s infinite;
+    position: relative;
+    z-index: 20; /* تظهر فوق الخلفية أثناء المقدمة */
+}
+
+.host-name {
+    font-size: 2.5rem;
+    color: var(--light-color);
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 20; /* تظهر فوق الخلفية أثناء المقدمة */
+}
+
+.main-menu {
+    display: flex;
+    gap: 30px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+    z-index: 10; /* أقل من الفيديو أثناء المقدمة */
+}
+
+.menu-btn {
+    padding: 18px 50px;
+    font-size: 1.7rem;
+    background: var(--gradient-secondary);
+    color: var(--dark-color);
+    border: none;
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    font-weight: bold;
+    box-shadow: var(--shadow-medium);
+    min-width: 300px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.menu-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.6);
+}
+
+.btn-text {
+    font-weight: bold;
+}
+
+#introVideo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 100;
+    display: none; /* سيتم إظهاره أثناء التشغيل */
+    pointer-events: none; /* لا يمنع النقر على القائمة لاحقاً */
+}
+
+

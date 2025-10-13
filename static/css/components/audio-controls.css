@@ -1,0 +1,62 @@
+/* audio-controls.css - عناصر التحكم بالصوت */
+.audio-controls-container {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    gap: 10px;
+    z-index: 1000;
+}
+
+.control-btn {
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 2px solid var(--secondary-color);
+    transition: all var(--transition-fast);
+}
+
+.control-btn:hover {
+    transform: scale(1.1);
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.control-btn i {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+}
+
+.exit-btn {
+    border-color: var(--accent-color);
+}
+
+.exit-btn i {
+    color: var(--accent-color);
+}
+
+.control-tooltip {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+    pointer-events: none;
+}
+
+.control-btn:hover .control-tooltip {
+    opacity: 1;
+}
+
+

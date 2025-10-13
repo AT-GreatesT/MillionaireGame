@@ -1,0 +1,92 @@
+/* lifelines.css - وسائل المساعدة */
+.lifelines {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.lifeline {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    border: 3px solid var(--secondary-color);
+    border-radius: var(--border-radius-md);
+    padding: 15px 25px;
+    color: var(--light-color);
+    font-weight: bold;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.2rem;
+    min-width: 120px;
+    justify-content: center;
+    position: relative;
+}
+
+.lifeline:not(.disabled):not(.used):hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.5);
+}
+
+.lifeline.used {
+    opacity: 0.4;
+    cursor: not-allowed;
+    pointer-events: none;
+    border-color: #555;
+    background: linear-gradient(135deg, #333, #444);
+}
+
+.lifeline.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.lifeline-icon {
+    font-size: 1.3rem;
+}
+
+.lifeline-text {
+    font-weight: bold;
+}
+
+.lifeline-desc {
+    font-size: 0.8rem;
+    opacity: 0.8;
+    display: block;
+}
+
+.lifeline-tooltip {
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+    pointer-events: none;
+}
+
+.lifeline:hover .lifeline-tooltip {
+    opacity: 1;
+}
+
+/* قسم وسائل المساعدة */
+.lifelines-section {
+    margin-bottom: 20px;
+}
+
+.lifelines-section h4 {
+    color: var(--secondary-color);
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+

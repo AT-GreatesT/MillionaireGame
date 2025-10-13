@@ -1,0 +1,60 @@
+/* difficulty.css - نظام الصعوبة */
+.difficulty-indicator {
+    padding: 6px 12px;
+    border-radius: 15px;
+    color: white;
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-align: center;
+    min-width: 80px;
+}
+
+.difficulty-indicator.easy {
+    background-color: var(--easy-color);
+    box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3);
+}
+
+.difficulty-indicator.medium {
+    background-color: var(--medium-color);
+    box-shadow: 0 2px 8px rgba(255, 152, 0, 0.3);
+}
+
+.difficulty-indicator.hard {
+    background-color: var(--hard-color);
+    box-shadow: 0 2px 8px rgba(244, 67, 54, 0.3);
+}
+
+.difficulty-indicator.very-hard {
+    background-color: var(--very-hard-color);
+    box-shadow: 0 2px 8px rgba(156, 39, 176, 0.3);
+}
+
+.difficulty-indicator.ultimate {
+    background-color: var(--ultimate-color);
+    box-shadow: 0 2px 8px rgba(255, 64, 129, 0.3);
+    animation: pulse 1.5s infinite;
+}
+
+/* ألوان النص للصعوبة */
+.text-easy { color: var(--easy-color); }
+.text-medium { color: var(--medium-color); }
+.text-hard { color: var(--hard-color); }
+.text-very-hard { color: var(--very-hard-color); }
+.text-ultimate { color: var(--ultimate-color); }
+
+/* خلفيات الصعوبة */
+.bg-easy { background-color: rgba(76, 175, 80, 0.1); }
+.bg-medium { background-color: rgba(255, 152, 0, 0.1); }
+.bg-hard { background-color: rgba(244, 67, 54, 0.1); }
+.bg-very-hard { background-color: rgba(156, 39, 176, 0.1); }
+.bg-ultimate { background-color: rgba(255, 64, 129, 0.1); }
+
+/* حدود الصعوبة */
+.border-easy { border-color: var(--easy-color); }
+.border-medium { border-color: var(--medium-color); }
+.border-hard { border-color: var(--hard-color); }
+.border-very-hard { border-color: var(--very-hard-color); }
+.border-ultimate { border-color: var(--ultimate-color); }
+
+
+

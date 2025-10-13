@@ -1,0 +1,25 @@
+/* style.css - الملف الرئيسي لتجميع جميع CSS */
+@import url('variables.css');
+@import url('base.css');
+
+/* الشاشات */
+@import url('screens/welcome.css');
+@import url('screens/intro.css');
+@import url('screens/rules.css');
+@import url('screens/game.css');
+@import url('screens/outro.css');
+
+/* المكونات */
+@import url('components/audio-controls.css');
+@import url('components/prize-list.css');
+@import url('components/lifelines.css');
+@import url('components/questions.css');
+@import url('components/modals.css');
+
+/* الأدوات */
+@import url('utilities/animations.css');
+@import url('utilities/difficulty.css');
+@import url('utilities/responsive.css');
+
+
+

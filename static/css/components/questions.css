@@ -1,0 +1,104 @@
+/* questions.css - الأسئلة والخيارات */
+.options-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.option {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    border: 3px solid var(--secondary-color);
+    border-radius: var(--border-radius-md);
+    padding: 15px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: var(--shadow-medium);
+    min-height: 60px;
+}
+
+.option:hover:not(.selected):not(.correct):not(.wrong) {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.option.selected {
+    background: linear-gradient(135deg, #4d5d7a, #5c6c8c);
+    border-color: #fff;
+    transform: scale(1.02);
+}
+
+.option.correct {
+    background: var(--gradient-success);
+    border-color: #fff;
+    animation: pulse 1s 3;
+}
+
+.option.wrong {
+    background: var(--gradient-danger);
+    border-color: #fff;
+}
+
+.option-letter {
+    background: var(--secondary-color);
+    color: var(--dark-color);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* تنسيق تصويت الجمهور */
+.audience-results {
+    width: 100%;
+    padding: 0 10px;
+    margin: 10px auto;
+}
+
+.result-bar-container {
+    display: flex;
+    align-items: center;
+    margin: 12px 0;
+    font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    padding: 8px;
+    gap: 10px;
+}
+
+.option-label {
+    flex: 0 0 60px;
+    text-align: right;
+    font-weight: bold;
+}
+
+.bar-container {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    height: 20px;
+    overflow: hidden;
+}
+
+.bar {
+    height: 100%;
+    background: linear-gradient(90deg, #1e3c72, var(--secondary-color));
+    border-radius: 5px;
+    transition: width 0.5s ease-out;
+}
+
+.percentage {
+    flex: 0 0 45px;
+    font-weight: bold;
+    color: var(--light-color);
+    text-align: left;
+}
+
+

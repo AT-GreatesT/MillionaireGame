@@ -1,0 +1,110 @@
+/* outro.css - شاشة النهاية */
+#outroScreen {
+    display: none; /* 👈 تأكد من إخفائها مبدئيًا */
+    background: var(--gradient-primary);
+    text-align: center;
+    pointer-events: none; /* 👈 يمنع التفاعل أثناء الإخفاء */
+    position: relative;
+
+
+}
+
+.result-message-box {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 40px;
+    border-radius: var(--border-radius-lg);
+    border: 3px solid var(--secondary-color);
+    max-width: 600px;
+    width: 90%;
+    box-shadow: var(--shadow-heavy);
+    position: relative;
+    z-index: 2; /* 👈 تأكد أن صندوق النتيجة فوق الفيديو */
+    
+}
+
+
+.outro-title {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.prize-check {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border: 5px solid var(--secondary-color);
+    border-radius: var(--border-radius-sm);
+    margin: 20px 0;
+    box-shadow: var(--shadow-glow);
+}
+
+.final-prize-text {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--light-color);
+}
+
+.final-prize {
+    font-size: 3rem;
+    color: var(--correct-color);
+    font-weight: bold;
+    background-color: var(--dark-color);
+    padding: 10px 20px;
+    border-radius: var(--border-radius-sm);
+    border: 2px solid var(--correct-color);
+    margin: 20px 0;
+}
+
+.countdown {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+/* أزرار الإجراءات */
+.outro-actions {
+    display: flex;
+    gap: 15px;
+    margin: 20px 0;
+    justify-content: center;
+}
+
+.btn-play-again {
+    background: var(--gradient-success);
+    color: white;
+}
+
+.btn-main-menu {
+    background: var(--gradient-primary);
+    color: white;
+    border: 2px solid var(--secondary-color);
+}
+
+/* تفاصيل النتيجة */
+.result-details {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: var(--border-radius-sm);
+    margin: 15px 0;
+    text-align: center;
+}
+
+.game-summary {
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-top: 10px;
+}
+
+.outro-video {
+    width: 80%;
+    max-width: 800px;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-heavy);
+    position: relative;
+    z-index: 1;
+}
+
+

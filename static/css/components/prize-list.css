@@ -1,0 +1,155 @@
+/* prize-list.css - قائمة الجوائز */
+.prize-section {
+    flex: 0 0 300px; /* تصغير العرض قليلاً */
+    background: linear-gradient(135deg, rgba(10, 36, 99, 0.95), rgba(30, 60, 114, 0.95));
+    border-radius: var(--border-radius-md);
+    padding: 12px; /* تقليل الحشو */
+    display: flex;
+    flex-direction: column;
+    gap: 3px; /* تقليل المسافة بين العناصر */
+    box-shadow: var(--shadow-heavy);
+    border: 3px solid var(--secondary-color);
+    height: 85vh; /* ارتفاع أقل */
+    margin: 20px 0; /* مسافة من الأعلى والأسفل */
+    overflow-y: auto; /* إضافة تمرير إذا لزم الأمر */
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+.section-header h3 {
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.prize-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.prize-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 10px; /* تصغير الحشو أكثر */
+    border-radius: var(--border-radius-sm);
+    transition: all var(--transition-fast);
+    font-size: 0.9rem; /* تصغير الخط */
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    min-height: 35px; /* تصغير الارتفاع */
+}
+
+.prize-item:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.prize-level {
+    font-weight: bold;
+    color: var(--secondary-color);
+    min-width: 25px; /* تصغير العرض */
+    text-align: center;
+    background: rgba(212, 175, 55, 0.25);
+    padding: 3px 6px; /* تصغير الحشو */
+    border-radius: 4px;
+    font-size: 0.8rem;
+    border: 1px solid var(--secondary-color);
+}
+
+
+.prize-amount {
+    flex: 1;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.9rem; /* تصغير الخط */
+}
+
+.safe-icon {
+    color: var(--correct-color);
+    margin-left: 8px;
+    font-size: 0.9rem;
+}
+
+/* حالات خاصة للجوائز */
+.prize-item.current {
+    background: var(--gradient-secondary);
+    color: var(--dark-color);
+    font-weight: bold;
+    transform: scale(1.02);
+    border: 2px solid #fff;
+    box-shadow: var(--shadow-glow);
+}
+
+.prize-item.current .prize-level {
+    background: rgba(0, 0, 0, 0.3);
+    color: var(--dark-color);
+    border: 1px solid var(--dark-color);
+}
+
+.prize-item.current .prize-amount {
+    color: var(--dark-color);
+    font-weight: bold;
+}
+
+.prize-item.safe {
+    border-right: 3px solid var(--correct-color);
+}
+
+.prize-item.safe .prize-amount {
+    color: var(--correct-color);
+    font-weight: bold;
+}
+
+.prize-item.reached {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(198, 156, 0, 0.15));
+    border-right: 2px solid var(--secondary-color);
+}
+
+/* تخصيص المليون */
+.prize-item[data-level="15"] {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.25), rgba(198, 156, 0, 0.25));
+    border: 2px solid var(--secondary-color);
+}
+
+.prize-item[data-level="15"] .prize-amount {
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+/* تخصيص نقاط الأمان */
+.prize-item[data-level="5"],
+.prize-item[data-level="10"] {
+    background: linear-gradient(135deg, rgba(40, 167, 69, 0.15), rgba(33, 136, 56, 0.15));
+}
+
+/* شارات الصعوبة */
+.difficulty-badge {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 2px 8px;
+    border-radius: 10px;
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+/* إزالة شريط التمرير */
+.prize-section::-webkit-scrollbar {
+    display: none;
+}
+
+.prize-section {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+

@@ -1,0 +1,130 @@
+/* modals.css - النوافذ المنبثقة */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+.modal-content {
+    background-color: var(--primary-color);
+    border-radius: var(--border-radius-md);
+    padding: 30px;
+    box-shadow: var(--shadow-heavy);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 90%;
+    max-width: 500px;
+    border: 3px solid var(--secondary-color);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.modal-header h2 {
+    color: var(--secondary-color);
+    font-size: 1.6rem;
+    margin: 0;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 5px;
+    transition: color var(--transition-fast);
+}
+
+.modal-close:hover {
+    color: var(--accent-color);
+}
+
+.modal-body {
+    width: 100%;
+}
+
+.modal-footer {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* نوافذ خاصة */
+.stats-modal {
+    max-width: 600px;
+}
+
+.confirmation-modal {
+    max-width: 500px;
+}
+
+.confirmation-message {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.warning-icon {
+    font-size: 2rem;
+    color: var(--accent-color);
+}
+
+.current-prize-display {
+    text-align: center;
+    background: rgba(212, 175, 55, 0.2);
+    padding: 15px;
+    border-radius: var(--border-radius-sm);
+    border: 1px solid var(--secondary-color);
+}
+
+#modalTitle {
+    font-size: 1.6rem;
+    margin-bottom: 5px;
+    color: var(--secondary-color);
+    text-align: center;
+}
+
+#modalMessage {
+    width: 100%;
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+#closeModalButton {
+    padding: 10px 25px;
+    font-size: 1.1rem;
+    background-color: var(--correct-color);
+    color: var(--dark-color);
+    border: none;
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    margin-top: 15px;
+    font-weight: bold;
+    transition: all var(--transition-fast);
+}
+
+#closeModalButton:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+

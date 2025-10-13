@@ -1,0 +1,67 @@
+<div class="screen" id="gameScreen">
+  <div class="game-container">
+
+    <div class="prize-section">
+      <div class="section-header">
+        <h3>قائمة الجوائز</h3>
+        <div class="game-stats-mini" id="gameStatsMini"></div>
+      </div>
+      <div class="prize-list" id="prizeList">
+        <!-- سيتم ملؤها ديناميكياً بـ JavaScript -->
+      </div>
+    </div>
+
+    <div class="question-area">
+      <!-- معلومات السؤال -->
+      <div class="question-info">
+        <div class="current-level">
+          <span class="level-label">المستوى:</span>
+          <span class="level-number" id="currentLevel"></span>
+        </div>
+        <div class="difficulty-indicator" id="difficultyIndicator">
+          <!-- سيتم ملؤها ديناميكياً -->
+        </div>
+        <div class="question-stats" id="questionStats">
+          <!-- سيتم ملؤها ديناميكياً -->
+        </div>
+      </div>
+
+      <div class="lifelines">
+        <div class="lifeline" id="fiftyFifty" data-type="fifty_fifty" title="حذف إجابتين">
+          <i class="fas fa-divide"></i><span>50:50</span>
+        </div>
+        <div class="lifeline" id="askAudience" data-type="ask_audience" title="اسأل الجمهور">
+          <i class="fas fa-users"></i><span>الجمهور</span>
+        </div>
+        <div class="lifeline" id="phoneFriend" data-type="phone_friend" title="اتصل بصديق">
+          <i class="fas fa-phone"></i><span>صديق</span>
+        </div>
+        <div class="lifeline walk-away-btn disabled" id="walkAway" data-type="walk_away" title="انسحب بالرصيد الحالي">
+          <i class="fas fa-hand-paper"></i><span>انسحاب</span>
+        </div>
+      </div>
+
+      <div class="question-container">
+        <div class="question-text" id="questionText">جاري تحميل السؤال...</div>
+      </div>
+
+      <div class="options-container" id="optionsContainer">
+        <!-- سيتم ملؤها ديناميكياً بـ JavaScript -->
+      </div>
+
+      <!-- إحصائيات اللعبة -->
+      <div class="game-stats" id="gameStats" style="display: none;">
+        <!-- سيتم ملؤها ديناميكياً -->
+      </div>
+    </div>
+
+    <!-- معلومات إضافية -->
+    <div class="info-section">
+      <div class="current-prize">
+        <span class="prize-label">الجائزة الحالية:</span>
+        <span class="prize-amount" id="currentPrizeAmount">100 نقطة</span>
+      </div>
+    </div>
+  </div>
+</div>
+

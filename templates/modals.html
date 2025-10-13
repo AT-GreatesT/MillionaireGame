@@ -1,0 +1,66 @@
+<!-- نافذة وسائل المساعدة -->
+<div class="modal" id="lifelineModal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2 id="modalTitle">وسيلة المساعدة</h2>
+            <button class="modal-close" onclick="closeModal('lifelineModal')">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div id="modalMessage"></div>
+            <div id="modalContent"></div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" onclick="closeModal('lifelineModal')">استمرار</button>
+        </div>
+    </div>
+</div>
+
+<!-- نافذة الإحصائيات -->
+<div class="modal" id="statsModal">
+    <div class="modal-content stats-modal">
+        <div class="modal-header">
+            <h2>إحصائيات المسابقة</h2>
+            <button class="modal-close" onclick="closeModal('statsModal')">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="stats-grid" id="statsContent">
+                <!-- سيتم ملؤها ديناميكياً -->
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" onclick="closeModal('statsModal')">إغلاق</button>
+        </div>
+    </div>
+</div>
+
+<!-- نافذة تأكيد الانسحاب -->
+<div class="modal" id="walkAwayModal">
+    <div class="modal-content confirmation-modal">
+        <div class="modal-header">
+            <h2>تأكيد الانسحاب</h2>
+            <button class="modal-close" onclick="closeModal('walkAwayModal')">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="confirmation-message">
+                <i class="fas fa-hand-paper warning-icon"></i>
+                <p id="walkAwayMessage">هل أنت متأكد من رغبتك في الانسحاب بالرصيد الحالي؟</p>
+            </div>
+            <div class="current-prize-display">
+                <span>سوف تحصل على:</span>
+                <span class="prize-amount" id="walkAwayPrize">0 نقطة</span>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-danger" id="confirmWalkAway">نعم، انسحب</button>
+            <button class="btn btn-secondary" onclick="closeModal('walkAwayModal')">إلغاء</button>
+        </div>
+    </div>
+</div>
+
+
