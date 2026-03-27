@@ -1,4 +1,4 @@
-/* welcome.css - شاشة الترحيب */
+/* welcome.css - شاشة الترحيب الكاملة */
 #welcomeScreen {
     display: flex;
     align-items: center;
@@ -6,6 +6,8 @@
     flex-direction: column;
     gap: 30px;
     background: var(--gradient-primary);
+    min-height: 100vh;
+    padding: 20px;
 }
 
 .welcome-content {
@@ -15,6 +17,8 @@
     border-radius: var(--border-radius-lg);
     border: 3px solid var(--secondary-color);
     box-shadow: var(--shadow-heavy);
+    width: 90%;
+    max-width: 600px;
 }
 
 .welcome-content h1 {
@@ -46,7 +50,6 @@
     box-shadow: 0 8px 20px rgba(0, 114, 255, 0.5);
 }
 
-/* ميزات شاشة الترحيب */
 .welcome-features {
     display: flex;
     flex-direction: column;
@@ -72,4 +75,13 @@
     color: #ccc;
     opacity: 0.8;
 }
+
+/* --- تعديلات الموبايل المضافة --- */
+@media (max-width: 768px) {
+    .welcome-content { padding: 30px 15px; }
+    .welcome-content h1 { font-size: 2.2rem; margin-bottom: 20px; }
+    .start-app-btn { font-size: 1.2rem; padding: 12px 30px; width: 100%; }
+    .feature-item { font-size: 1rem; }
+}
+
 

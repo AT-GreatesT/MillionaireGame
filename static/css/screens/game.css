@@ -1,4 +1,5 @@
-/* game.css - شاشة اللعبة */
+/* game.css - شاشة اللعبة الاحترافية المتجاوبة */
+
 .game-container {
     display: flex;
     width: 100%;
@@ -9,6 +10,13 @@
     height: 95vh;
     align-items: flex-start;
     padding-top: 20px;
+    position: absolute;
+    top: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15px;
+    z-index: 1000;
 }
 
 .question-area {
@@ -28,17 +36,6 @@
     background: rgba(255, 255, 255, 0.1);
     padding: 10px 15px;
     border-radius: var(--border-radius-sm);
-    margin-bottom: 10px;
-}
-
-.current-level {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.level-label {
-    color: #ccc;
 }
 
 .level-number {
@@ -47,11 +44,6 @@
     padding: 4px 12px;
     border-radius: 20px;
     font-weight: bold;
-}
-
-.question-stats {
-    font-size: 0.9rem;
-    color: #ccc;
 }
 
 /* حاوية السؤال */
@@ -70,11 +62,7 @@
     box-shadow: var(--shadow-medium);
 }
 
-.question-text {
-    width: 100%;
-}
-
-/* قسم المعلومات الإضافية - الموقع المعدل */
+/* قسم المعلومات (الجوائز) */
 .info-section {
     flex: 0 0 120px;
     background: linear-gradient(135deg, rgba(10, 36, 99, 0.9), rgba(30, 60, 114, 0.9));
@@ -82,76 +70,130 @@
     padding: 15px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     gap: 10px;
     border: 2px solid var(--secondary-color);
-    margin-top: 20px; /* مسافة من الأعلى */
-    margin-bottom: auto; /* يبقى في الأعلى */
-    align-self: flex-start; /* يلتصق بالأعلى */
+    align-self: flex-start;
 }
-
 
 .current-prize {
     text-align: center;
     background: rgba(212, 175, 55, 0.3);
     padding: 12px 18px;
-    border-radius: var(--border-radius-sm);
     border: 2px solid var(--secondary-color);
-    width: 100%;
-    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
-}
-
-.prize-label {
-    display: block;
-    color: var(--secondary-color);
-    font-size: 0.9rem;
-    margin-bottom: 8px;
-    font-weight: bold;
+    border-radius: var(--border-radius-sm);
 }
 
 .prize-amount {
     font-size: 1.6rem;
     color: var(--secondary-color);
     font-weight: bold;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* =========================================
+   تعديلات الموبايل والتابلت (Portrait)
+   ========================================= */
+@media (max-width: 992px) {
+    body {
+        overflow-y: auto !important; /* السماح بالتحريك للأعلى والأسفل */
+        height: auto !important;
+    }
+
+    .game-container {
+        flex-direction: column;
+        padding-top: 60px; /* مساحة للأزرار العلوية */
+        height: auto;
+        overflow-y: auto;
+    }
+
+    /* 1. وسائل المساعدة في الأعلى مع مسافة */
+    .lifelines-container {
+        margin-top: 20px; /* ستبدأ الآن تحت أزرار التحكم */
+        order: 1;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+    }
+
+    /* 2. قسم الجوائز تحت وسائل المساعدة */
+    .prize-section {
+        order: 2;
+        width: 95%;
+        max-height: 250px; /* تحديد ارتفاع للقائمة */
+        overflow-y: auto;  /* تفعيل السكرول داخل الجوائز */
+        background: rgba(0, 0, 0, 0.6);
+        border: 1px solid var(--secondary-color);
+        display: block; /* لضمان عمل السكرول */
+        margin: 10px auto;
+        padding: 10px;
+        flex: none;
+    }
+
+    /* 3. منطقة السؤال */
+    .question-area {
+        order: 3;
+        min-width: 100% !important;
+        height: auto;
+    }
+
+    /* 4. معلومات إضافية */
+    .info-section {
+        order: 4;
+        width: 95%;
+        margin: 10px auto;
+    }
+
+    .prize-item.active {
+        background: var(--secondary-color);
+        color: var(--dark-color);
+    }
+
+    .question-container {
+        font-size: 1.2rem;
+        padding: 15px;
+        min-height: 100px;
+    }
+
+    .options-grid {
+        grid-template-columns: 1fr !important; /* خيار واحد في كل سطر للموبايل */
+        gap: 10px;
+    }
+}
+
+/* =========================================
+   إصلاح وضع الـ Landscape (التدوير بالعرض)
+   ========================================= */
+@media (max-height: 500px) and (orientation: landscape) {
+    .game-container {
+        display: grid;
+        grid-template-columns: 1fr 250px; /* السؤال يسار والجوائز يمين */
+        grid-template-rows: auto 1fr;
+        height: 100vh;
+        gap: 5px;
+        padding: 5px;
+    }
+
+    .lifelines-container {
+        grid-column: 1 / span 2; /* وسائل المساعدة تأخذ العرض كاملاً في الأعلى */
+        margin-top: 35px;
+        transform: scale(0.8); /* تصغيرها قليلاً لتوفير مساحة */
+    }
+
+    .question-area {
+        grid-column: 1;
+        height: auto;
+        overflow-y: auto;
+    }
+
+    .info-section {
+        grid-column: 2;
+        height: 70vh; /* قائمة الجوائز بجانب السؤال */
+        display: flex;
+        flex-direction: column;
+        overflow-y: scroll;
+    }
 }
 
 
-/* إحصائيات اللعبة */
-.game-stats {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 15px;
-    border-radius: var(--border-radius-sm);
-    margin-top: 15px;
-}
-
-.game-stats-mini {
-    font-size: 0.8rem;
-    color: #ccc;
-    text-align: center;
-    margin-top: 5px;
-}
-
-.stats-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-}
-
-.stat-item {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 15px;
-    border-radius: var(--border-radius-sm);
-    text-align: center;
-}
-
-.stat-value {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--secondary-color);
-    display: block;
-    margin-top: 5px;
-}
 
 

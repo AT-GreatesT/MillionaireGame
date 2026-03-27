@@ -1,4 +1,6 @@
-/* variables.css - المتغيرات والألوان الرئيسية */
+/* =========================================
+   1. variables.css - المتغيرات والألوان
+   ========================================= */
 :root {
     /* الألوان الأساسية */
     --primary-color: #0a2463;
@@ -42,6 +44,137 @@
     --border-radius-md: 15px;
     --border-radius-lg: 20px;
     --border-radius-xl: 50px;
+}
+
+/* =========================================
+   2. Responsive Design - تصميم الموبايل والتابلت
+   ========================================= */
+
+/* الشاشات المتوسطة والصغيرة (Tablets & Phones) */
+@media (max-width: 768px) {
+    body {
+        /* السماح بالتمرير إذا كان المحتوى طويلاً لمنع اختفاء الأزرار السفلى */
+        overflow-y: auto !important; 
+        align-items: flex-start;
+        padding: 10px 0;
+    }
+
+    .screen {
+        padding: 15px;
+        height: auto;
+        min-height: 100vh;
+        display: none; /* يتم تغييره لـ flex بواسطة JS */
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 15px;
+    }
+
+    /* وسائل المساعدة */
+    .lifelines-container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        margin-top: 10px;
+        order: -1; /* لجعلها تظهر في الأعلى دائماً */
+    }
+
+    .lifeline-btn {
+        width: 55px; /* تكبير بسيط لسهولة اللمس */
+        height: 55px;
+        font-size: 0.85rem;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* قائمة الجوائز الجانبية */
+    .prize-list {
+        position: fixed;
+        right: -100%; /* اجعلها من اليمين لأن اللغة العربية RTL */
+        top: 0;
+        width: 80%; /* زيادة العرض قليلاً للموبايل */
+        height: 100%;
+        background: var(--primary-color);
+        background-image: var(--gradient-primary);
+        z-index: 9999;
+        transition: right var(--transition-medium);
+        padding: 30px 15px;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+        overflow-y: auto;
+    }
+
+    .prize-list.active {
+        right: 0;
+    }
+
+    /* حاوية السؤال */
+    .question-container {
+        width: 100%;
+        text-align: center;
+    }
+
+    .question-text {
+        font-size: 1.15rem;
+        line-height: 1.5;
+        padding: 20px 15px;
+        background: rgba(255, 255, 255, 0.1);
+        border: 2px solid var(--secondary-color);
+        border-radius: var(--border-radius-md);
+        margin-bottom: 20px;
+    }
+
+    /* توزيع الخيارات */
+    .options-grid {
+        display: grid;
+        grid-template-columns: 1fr; /* خيار واحد في كل سطر لسهولة اللمس */
+        gap: 12px;
+        width: 100%;
+    }
+
+    .option-btn {
+        width: 100%;
+        padding: 18px;
+        font-size: 1.05rem;
+        text-align: right; /* لتناسب اللغة العربية */
+        border-radius: var(--border-radius-xl); /* شكل بيضاوي مثل البرنامج الأصلي */
+    }
+
+    /* تصغير الأزرار العامة */
+    .btn {
+        padding: 15px;
+        font-size: 1rem;
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* الشاشات الصغيرة جداً (Small Phones) */
+@media (max-width: 480px) {
+    .question-text {
+        font-size: 1rem;
+        padding: 15px 10px;
+    }
+
+    .lifeline-btn {
+        width: 45px;
+        height: 45px;
+    }
+    
+    :root {
+        --border-radius-md: 10px;
+    }
+}
+
+/* تحسينات عامة للموبايل لمنع مشاكل العرض */
+* {
+    -webkit-tap-highlight-color: transparent; /* منع اللون الأزرق عند الضغط في الأندرويد */
+    user-select: none; /* منع تحديد النصوص داخل اللعبة */
+}
+
+input, textarea {
+    user-select: text; /* السماح بالكتابة فقط في حقول الإدخال إذا وجدت */
 }
 
 

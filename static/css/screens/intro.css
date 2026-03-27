@@ -1,12 +1,15 @@
-/* intro.css - شاشة المقدمة */
+/* intro.css - شاشة المقدمة الكاملة */
 #introScreen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     gap: 40px;
     background: var(--gradient-primary);
-    position: relative; /* ✅ ضروري لتثبيت الفيديو داخل الشاشة */
+    position: relative;
     overflow: hidden;
-    position: relative; /* لتثبيت الفيديو داخله */
-    overflow: hidden;
-    background: var(--gradient-primary);
+    min-height: 100vh;
+    padding: 20px;
 }
 
 .main-title {
@@ -16,7 +19,7 @@
     font-weight: bold;
     animation: pulse 2s infinite;
     position: relative;
-    z-index: 20; /* تظهر فوق الخلفية أثناء المقدمة */
+    z-index: 20;
 }
 
 .host-name {
@@ -24,7 +27,7 @@
     color: var(--light-color);
     margin-bottom: 20px;
     position: relative;
-    z-index: 20; /* تظهر فوق الخلفية أثناء المقدمة */
+    z-index: 20;
 }
 
 .main-menu {
@@ -34,7 +37,7 @@
     flex-wrap: wrap;
     justify-content: center;
     position: relative;
-    z-index: 10; /* أقل من الفيديو أثناء المقدمة */
+    z-index: 20;
 }
 
 .menu-btn {
@@ -56,25 +59,29 @@
     gap: 15px;
 }
 
-.menu-btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.6);
-}
-
-.btn-text {
-    font-weight: bold;
-}
-
 #introVideo {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
     object-fit: cover;
     z-index: 100;
-    display: none; /* سيتم إظهاره أثناء التشغيل */
-    pointer-events: none; /* لا يمنع النقر على القائمة لاحقاً */
+    display: none;
+    pointer-events: none;
 }
+
+/* --- تعديلات الموبايل المضافة --- */
+@media (max-width: 768px) {
+    .main-title { font-size: 2.2rem; }
+    .host-name { font-size: 1.4rem; }
+    .main-menu { flex-direction: column; gap: 15px; width: 100%; margin-top: 20px; }
+    .menu-btn { min-width: unset; width: 100%; font-size: 1.2rem; padding: 15px; }
+    #introVideo { object-fit: cover; }
+}
+
 
 

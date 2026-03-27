@@ -17,6 +17,15 @@
         gap: 15px;
     }
     
+    .lifelines-container {
+        order: 1;
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+    }
+    
     .prize-section {
         flex: none;
         width: 100%;
@@ -27,13 +36,13 @@
     .question-area {
         min-width: auto;
         height: auto;
-        order: 1;
+        order: 3;
     }
     
     .info-section {
         flex: none;
         width: 100%;
-        order: 3;
+        order: 4;
         margin-top: 15px;
     }
 }
